@@ -1,34 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+nextjs
+debounce (prevent spam API)
+recoil (state management)
 
-## Getting Started
+alt+click for multi cursor selection
 
-First, run the development server:
+install nvm
+nvm install 16
+nvm use 16.7.0 => use node 16.7
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+npm install next-auth@4.0.0-beta.7
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+npm install spotify-web-api-node
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+next-auth refresh token
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+change redirectUrl in spotify dev page Settings to http://localhost:3000/api/auth/callback/spotify
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+middlware changed in recent nextJS... downgraded to 12.1.6 with npm install next@12.1.6 --legacy-peer-deps
 
-## Learn More
+npm instll tailwind-scrollbar-hide
 
-To learn more about Next.js, take a look at the following resources:
+npm install lodash
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+npm install recoil
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you want to make skip to previous / next work, instead of "spotify.play({ uri: [<track uri>]})", use "spotify.play({context_uri: <playlist uri>, offset: {uri: <track uri>} } )"
+Thanks to another comment pointing out that the currently playing song doesn't know which playlist it is in, hence being unable to skip to next / previous.
