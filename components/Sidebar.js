@@ -4,10 +4,10 @@ import {
   SearchIcon,
   LibraryIcon,
   PlusCircleIcon,
-  HeartIcon,
   RssIcon,
 } from "@heroicons/react/outline";
-import { signOut, useSession } from "next-auth/react";
+import { HeartIcon } from "@heroicons/react/solid";
+import { useSession } from "next-auth/react";
 import useSpotify from "../hooks/useSpotify";
 import { playlistIdState } from "../atoms/playlistAtom";
 import { useRecoilState } from "recoil";
@@ -40,35 +40,36 @@ const Sidebar = () => {
     >
       <div className="space-y-4">
         <button className="flex items-center space-x-2 hover:text-white">
-          <HomeIcon className="h-5 w-5" />
+          <HomeIcon className="h-5 w-5 text-indigo-500" />
           <p>Home</p>
         </button>
         <button className="flex items-center space-x-2 hover:text-white">
-          <SearchIcon className="h-5 w-5" />
+          <SearchIcon className="h-5 w-5 text-orange-500" />
           <p>Search</p>
         </button>
         <button className="flex items-center space-x-2 hover:text-white">
-          <LibraryIcon className="h-5 w-5" />
+          <LibraryIcon className="h-5 w-5 text-lime-500" />
           <p>Your Library</p>
         </button>
 
         <hr className="border-t-[0.1px] border-gray-900" />
 
         <button className="flex items-center space-x-2 hover:text-white">
-          <PlusCircleIcon className="h-5 w-5" />
+          <PlusCircleIcon className="h-5 w-5 text-purple-500" />
           <p>Create Playlist</p>
         </button>
-        <button className="flex items-center space-x-2 hover:text-white">
-          <HeartIcon className="h-5 w-5" />
+        <button className="flex items-center space-x-2 hover:text-white ">
+          <HeartIcon className="h-5 w-5 text-red-500" />
           <p>Liked Songs</p>
         </button>
         <button className="flex items-center space-x-2 hover:text-white">
-          <RssIcon className="h-5 w-5" />
+          <RssIcon className="h-5 w-5 text-blue-500" />
           <p>Your episodes</p>
         </button>
 
         <hr className="border-t-[0.1px] border-gray-900" />
 
+        {/* playlist */}
         {playlists.map((playlist) => (
           <p
             key={playlist.id}
@@ -78,8 +79,6 @@ const Sidebar = () => {
             {playlist.name}
           </p>
         ))}
-
-        {/* playlist */}
       </div>
     </div>
   );
